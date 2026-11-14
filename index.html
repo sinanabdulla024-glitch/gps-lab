@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My GPS Lab</title>
+</head>
+<body>
+<h2>Samsung M15 GPS Test</h2>
+<button onclick="getLocation()">Get My Location</button>
+<p id="result">Waiting...</p>
+
+<script>
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      document.getElementById("result").innerHTML =
+        "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    },
+    function(error) {
+      document.getElementById("result").innerText =
+        error.message;
+    }
+  );
+}
+</script>
+</body>
+</html>
+
